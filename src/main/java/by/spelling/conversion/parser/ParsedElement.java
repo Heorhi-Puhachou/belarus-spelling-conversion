@@ -1,6 +1,7 @@
-package by.parser;
+package by.spelling.conversion.parser;
 
-import by.util.WordCase;
+
+import by.spelling.conversion.util.WordCase;
 
 public class ParsedElement {
 

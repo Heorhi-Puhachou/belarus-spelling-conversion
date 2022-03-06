@@ -1,6 +1,6 @@
-package by.util;
+package by.spelling.conversion.util;
 
-import static by.util.StringUtilCheck.isGalosny;
+import static by.spelling.conversion.util.StringUtilCheck.isGalosny;
 
 public class StringUtilGet {
 

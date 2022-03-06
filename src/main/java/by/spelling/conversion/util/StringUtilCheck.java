@@ -1,10 +1,10 @@
-package by.util;
+package by.spelling.conversion.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static by.util.StringUtilGet.findFirstVowel;
-import static by.util.StringUtilGet.getVowelQuantity;
+import static by.spelling.conversion.util.StringUtilGet.findFirstVowel;
+import static by.spelling.conversion.util.StringUtilGet.getVowelQuantity;
 
 public class StringUtilCheck {
 

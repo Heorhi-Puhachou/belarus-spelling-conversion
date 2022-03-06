@@ -1,4 +1,4 @@
-package by.util;
+package by.spelling.conversion.util;
 
 public class StringUtilTransform {
 

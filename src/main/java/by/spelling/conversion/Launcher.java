@@ -1,4 +1,4 @@
-package by;
+package by.spelling.conversion;
 
 public class Launcher {
 

@@ -1,8 +1,8 @@
-package by.parser;
+package by.spelling.conversion.parser;
 
 import java.util.ArrayList;
 
-import static by.util.StringUtilCheck.isWordSymbol;
+import static by.spelling.conversion.util.StringUtilCheck.isWordSymbol;
 
 public class Parser {
 

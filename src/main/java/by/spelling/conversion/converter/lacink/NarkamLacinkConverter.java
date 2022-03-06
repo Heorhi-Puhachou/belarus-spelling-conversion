@@ -1,16 +1,17 @@
-package by.convert.lacink;
+package by.spelling.conversion.converter.lacink;
 
-import by.convert.BaseConverter;
-import by.convert.tarask.NarkamTaraskConverter;
-import by.parser.ParsedElement;
-import by.parser.Parser;
+
+import by.spelling.conversion.converter.BaseConverter;
+import by.spelling.conversion.converter.tarask.NarkamTaraskConverter;
+import by.spelling.conversion.parser.ParsedElement;
+import by.spelling.conversion.parser.Parser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static by.util.StringUtilCheck.*;
-import static by.util.StringUtilGet.getLastSymbol;
-import static by.util.StringUtilTransform.transformCase;
+import static by.spelling.conversion.util.StringUtilCheck.*;
+import static by.spelling.conversion.util.StringUtilGet.getLastSymbol;
+import static by.spelling.conversion.util.StringUtilTransform.transformCase;
 
 public class NarkamLacinkConverter extends BaseConverter {
 

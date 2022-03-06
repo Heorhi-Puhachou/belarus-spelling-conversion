@@ -1,30 +1,26 @@
-package by.convert.tarask;
+package by.spelling.conversion.converter.tarask;
 
-import by.convert.BaseConverter;
-import by.convert.tarask.constant.MiakkajaPara;
-import by.convert.tarask.constant.ZmiakcajemyZycny;
-import by.convert.tarask.constant.Zmiakchatel;
-import by.convert.tarask.constant.replace.DummyReplace;
-import by.convert.tarask.constant.replace.EndReplace;
-import by.convert.tarask.constant.replace.StartReplace;
-import by.parser.ParsedElement;
-import by.parser.Parser;
-import by.util.Pair;
-import by.util.WordCase;
+
+import by.spelling.conversion.converter.BaseConverter;
+import by.spelling.conversion.converter.tarask.constant.MiakkajaPara;
+import by.spelling.conversion.converter.tarask.constant.ZmiakcajemyZycny;
+import by.spelling.conversion.converter.tarask.constant.Zmiakchatel;
+import by.spelling.conversion.converter.tarask.constant.replace.DummyReplace;
+import by.spelling.conversion.converter.tarask.constant.replace.EndReplace;
+import by.spelling.conversion.converter.tarask.constant.replace.StartReplace;
+import by.spelling.conversion.parser.ParsedElement;
+import by.spelling.conversion.parser.Parser;
+import by.spelling.conversion.util.Pair;
+import by.spelling.conversion.util.WordCase;
 
 import java.util.ArrayList;
 
-import static by.util.StringUtilCheck.*;
-import static by.util.StringUtilGet.getLastSymbol;
-import static by.util.StringUtilTransform.transformCase;
+import static by.spelling.conversion.util.StringUtilCheck.*;
+import static by.spelling.conversion.util.StringUtilGet.getLastSymbol;
+import static by.spelling.conversion.util.StringUtilTransform.transformCase;
+
 
 public class NarkamTaraskConverter extends BaseConverter {
-
-    public static void main(String... args) {
-        NarkamTaraskConverter converter = new NarkamTaraskConverter();
-        //System.out.println(converter.convert("Яна і ён убачылі свет! не ведаю не трэба не той без той... З сямі? З ім."));
-        System.out.println(converter.convert("Не там."));
-    }
 
     private Parser parser;
 

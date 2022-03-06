@@ -1,6 +1,6 @@
-package by.convert.tarask.constant.replace;
+package by.spelling.conversion.converter.tarask.constant.replace;
 
-import by.util.Pair;
+import by.spelling.conversion.util.Pair;
 
 import java.util.ArrayList;
 

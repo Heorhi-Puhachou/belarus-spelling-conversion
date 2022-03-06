@@ -1,4 +1,4 @@
-package by.convert.tarask.constant;
+package by.spelling.conversion.converter.tarask.constant;
 
 import java.util.ArrayList;
 
