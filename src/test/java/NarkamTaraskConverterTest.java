@@ -3,18 +3,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestNarkamTaraskConverter {
+public class NarkamTaraskConverterTest {
 
+    private static final  NarkamTaraskConverter converter = new NarkamTaraskConverter();
 
     @Test
-    public void testNeNja() {
-        NarkamTaraskConverter converter = new NarkamTaraskConverter();
+    public void testTransformEIntoJa() {
         assertEquals("Ня там.", converter.convert("Не там."));
+        assertEquals("Бяз назвы", converter.convert("Без назвы"));
+        assertEquals("Ня бойка", converter.convert("Не бойка"));
     }
 
     @Test
     public void testE() {
-        NarkamTaraskConverter converter = new NarkamTaraskConverter();
         assertEquals("Эўропа", converter.convert("Еўропа"));
     }
 
