@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <!-- junit 5, unit test -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -24,14 +23,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.2</version>
                 <configuration>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>
-                                by.spelling.conversion.Launcher
-                            </mainClass>
+                            <mainClass>by.spelling.conversion.Launcher</mainClass>
                         </manifest>
+                        <manifestEntries>
+                            <Built-By>Heorhi Puhachou</Built-By>
+                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
