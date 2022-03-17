@@ -76,6 +76,7 @@ public class NarkamTaraskConverter extends BaseConverter {
         convertedValue = replaceStart(convertedValue);
         convertedValue = replaceEnd(convertedValue);
         convertedValue = chekMZ(convertedValue);
+        convertedValue = chekDZ(convertedValue);
         convertedValue = transformCase(current.getWordCase(), convertedValue);
         return convertedValue;
     }
@@ -141,6 +142,15 @@ public class NarkamTaraskConverter extends BaseConverter {
                 String tarask = ZmiakcajemyZycny.getZmiakcajemyjaZycnyja().get(i) + "ь" + MiakkajaPara.getMiakkijaPary().get(j);
                 in = in.replace(narkam, tarask);
             }
+        }
+        return in;
+    }
+
+    private String chekDZ(String in) {
+        for (int j=0; j<Zmiakchatel.getZmiakcaceli().size(); j++){
+            String narkam = "ддз"+Zmiakchatel.getZmiakcaceli().get(j);
+            String tarask = "дзьдз"+Zmiakchatel.getZmiakcaceli().get(j);
+            in = in.replace(narkam, tarask);
         }
         return in;
     }

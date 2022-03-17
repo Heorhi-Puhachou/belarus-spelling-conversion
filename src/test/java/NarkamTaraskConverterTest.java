@@ -15,6 +15,23 @@ public class NarkamTaraskConverterTest {
     }
 
     @Test
+    public void testDZ() {
+        assertEquals("судзьдзя", converter.convert("суддзя"));
+    }
+
+    @Test
+    public void testBP() {
+        assertEquals("зьбег", converter.convert("збег"));
+        assertEquals("сьпеўнік", converter.convert("спеўнік"));
+    }
+
+    @Test
+    public void testBP2() {
+        assertEquals("б'е", converter.convert("б'е"));
+        assertEquals("п'е", converter.convert("п'е"));
+    }
+
+    @Test
     public void testE() {
         assertEquals("Эўропа", converter.convert("Еўропа"));
     }
