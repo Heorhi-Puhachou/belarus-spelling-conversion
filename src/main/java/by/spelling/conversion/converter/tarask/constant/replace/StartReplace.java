@@ -19,8 +19,10 @@ public class StartReplace {
         startReplace.add(new Pair("нідэрланд", "нідэрлянд"));
         startReplace.add(new Pair("швейцар", "швайцар"));
         startReplace.add(new Pair("швецы", "швэцы"));
+        startReplace.add(new Pair("амерык", "амэрык"));
 
         startReplace.add(new Pair("інструмент", "інструмэнт"));
+        startReplace.add(new Pair("шаблон", "шаблён"));
     }
 
     public static StartReplace getInstance() {

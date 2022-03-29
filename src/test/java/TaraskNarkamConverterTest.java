@@ -13,4 +13,8 @@ public class TaraskNarkamConverterTest {
         assertEquals("Не там Еўропа...", converter.convert("Ня там Эўропа..."));
     }
 
+    @Test
+    public void testDZ() {
+        assertEquals("суддзя", converter.convert("судзьдзя"));
+    }
 }

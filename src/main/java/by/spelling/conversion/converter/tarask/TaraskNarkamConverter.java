@@ -69,6 +69,7 @@ public class TaraskNarkamConverter extends BaseConverter {
 
     private String convertElement(ParsedElement prev, ParsedElement current, ParsedElement next) {
         String convertedValue = checkI(prev, current.getWord(), current.getDelimiter());
+        convertedValue = chekDZ(convertedValue);
         convertedValue = checkZ(convertedValue, next);
         convertedValue = checkNe(convertedValue, next);
         convertedValue = checkBez(convertedValue, next);
@@ -126,6 +127,11 @@ public class TaraskNarkamConverter extends BaseConverter {
             }
         }
         return in;
+    }
+
+    //дзьдз -> ддз
+    private String chekDZ(String in) {
+        return in.replace("дзьдз","ддз");
     }
 
     private String dummyReplace(String in) {
