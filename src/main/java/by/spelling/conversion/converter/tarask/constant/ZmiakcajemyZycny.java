@@ -18,6 +18,7 @@ public class ZmiakcajemyZycny {
         zmiakcajemyjaZycnyja.add("ц");
         zmiakcajemyjaZycnyja.add("н");
         zmiakcajemyjaZycnyja.add("м");
+        zmiakcajemyjaZycnyja.add("л");
         zmiakcajemyjaZycnyja.add("з");
         zmiakcajemyjaZycnyja.add("дз");
     }
