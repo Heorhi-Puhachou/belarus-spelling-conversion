@@ -12,11 +12,8 @@ public class ZmiakcajemyZycny {
     private ZmiakcajemyZycny() {
         zmiakcajemyjaZycnyja = new ArrayList<>();
         zmiakcajemyjaZycnyja.add("с");
-        zmiakcajemyjaZycnyja.add("в");
         zmiakcajemyjaZycnyja.add("ц");
         zmiakcajemyjaZycnyja.add("н");
-        zmiakcajemyjaZycnyja.add("м");
-        zmiakcajemyjaZycnyja.add("л");
         zmiakcajemyjaZycnyja.add("з");
         zmiakcajemyjaZycnyja.add("дз");
     }

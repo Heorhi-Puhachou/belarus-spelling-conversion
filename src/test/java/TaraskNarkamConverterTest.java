@@ -19,6 +19,16 @@ public class TaraskNarkamConverterTest {
     }
 
     @Test
+    public void testDoublesMZ() {
+        assertEquals("вяселле", converter.convert("вясельле"));
+    }
+
+    @Test
+    public void testNoChange() {
+        assertEquals("карыстальнік", converter.convert("карыстальнік"));
+    }
+
+    @Test
     public void testDZ() {
         assertEquals("суддзя", converter.convert("судзьдзя"));
     }

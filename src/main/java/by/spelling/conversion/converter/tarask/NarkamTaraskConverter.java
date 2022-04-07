@@ -2,6 +2,7 @@ package by.spelling.conversion.converter.tarask;
 
 
 import by.spelling.conversion.converter.BaseConverter;
+import by.spelling.conversion.converter.tarask.constant.DoubleMiakki;
 import by.spelling.conversion.converter.tarask.constant.MiakkajaPara;
 import by.spelling.conversion.converter.tarask.constant.ZmiakcajemyZycny;
 import by.spelling.conversion.converter.tarask.constant.Zmiakchatel;
@@ -76,6 +77,7 @@ public class NarkamTaraskConverter extends BaseConverter {
         convertedValue = replaceStart(convertedValue);
         convertedValue = replaceEnd(convertedValue);
         convertedValue = chekMZ(convertedValue);
+        convertedValue = chekMZForDoubles(convertedValue);
         convertedValue = chekDZ(convertedValue);
         convertedValue = transformCase(current.getWordCase(), convertedValue);
         return convertedValue;
@@ -140,6 +142,17 @@ public class NarkamTaraskConverter extends BaseConverter {
             for (int j = 0; j < MiakkajaPara.getMiakkijaPary().size(); j++) {
                 String narkam = ZmiakcajemyZycny.getZmiakcajemyjaZycnyja().get(i) + MiakkajaPara.getMiakkijaPary().get(j);
                 String tarask = ZmiakcajemyZycny.getZmiakcajemyjaZycnyja().get(i) + "ь" + MiakkajaPara.getMiakkijaPary().get(j);
+                in = in.replace(narkam, tarask);
+            }
+        }
+        return in;
+    }
+
+    private String chekMZForDoubles(String in) {
+        for (int i = 0; i < DoubleMiakki.getDoubleMiakki().size(); i++) {
+            for (int j = 0; j < Zmiakchatel.getZmiakcaceli().size(); j++) {
+                String narkam = DoubleMiakki.getDoubleMiakki().get(i) + DoubleMiakki.getDoubleMiakki().get(i) + Zmiakchatel.getZmiakcaceli().get(j);
+                String tarask = DoubleMiakki.getDoubleMiakki().get(i) + "ь" + DoubleMiakki.getDoubleMiakki().get(i) + Zmiakchatel.getZmiakcaceli().get(j);
                 in = in.replace(narkam, tarask);
             }
         }
