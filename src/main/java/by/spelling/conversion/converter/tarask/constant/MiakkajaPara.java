@@ -13,9 +13,9 @@ public class MiakkajaPara {
 
     private MiakkajaPara() {
         miakkijaPary = new ArrayList<>();
-        for(int i = 0; i<ZmiakcajemyZycny.getZmiakcajemyjaZycnyja().size(); i++){
+        for(int i = 0; i<ZmiakcajucyZycny.getZmiakcajucyZycny().size(); i++){
             for (int j=0; j<Zmiakchatel.getZmiakcaceli().size(); j++){
-                miakkijaPary.add(ZmiakcajemyZycny.getZmiakcajemyjaZycnyja().get(i)+Zmiakchatel.getZmiakcaceli().get(j));
+                miakkijaPary.add(ZmiakcajucyZycny.getZmiakcajucyZycny().get(i)+Zmiakchatel.getZmiakcaceli().get(j));
             }
         }
     }

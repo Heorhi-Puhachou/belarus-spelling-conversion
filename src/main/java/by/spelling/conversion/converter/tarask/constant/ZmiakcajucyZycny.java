@@ -2,16 +2,18 @@ package by.spelling.conversion.converter.tarask.constant;
 
 import java.util.ArrayList;
 
-public class ZmiakcajemyZycny {
-    private static ZmiakcajemyZycny single_instance = null;
+public class ZmiakcajucyZycny {
+    private static ZmiakcajucyZycny single_instance = null;
 
 
     private ArrayList<String> zmiakcajemyjaZycnyja;
 
 
-    private ZmiakcajemyZycny() {
+    private ZmiakcajucyZycny() {
         zmiakcajemyjaZycnyja = new ArrayList<>();
         zmiakcajemyjaZycnyja.add("с");
+        zmiakcajemyjaZycnyja.add("п");
+        zmiakcajemyjaZycnyja.add("б");
         zmiakcajemyjaZycnyja.add("в");
         zmiakcajemyjaZycnyja.add("ц");
         zmiakcajemyjaZycnyja.add("н");
@@ -21,14 +23,14 @@ public class ZmiakcajemyZycny {
         zmiakcajemyjaZycnyja.add("дз");
     }
 
-    public static ZmiakcajemyZycny getInstance() {
+    public static ZmiakcajucyZycny getInstance() {
         if (single_instance == null)
-            single_instance = new ZmiakcajemyZycny();
+            single_instance = new ZmiakcajucyZycny();
 
         return single_instance;
     }
 
-    public static ArrayList<String> getZmiakcajemyjaZycnyja() {
+    public static ArrayList<String> getZmiakcajucyZycny() {
         return getInstance().zmiakcajemyjaZycnyja;
     }
 }
