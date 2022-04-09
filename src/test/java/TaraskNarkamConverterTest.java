@@ -19,6 +19,12 @@ public class TaraskNarkamConverterTest {
     }
 
     @Test
+    public void testEnding() {
+        assertEquals("кампендыум", converter.convert("кампендыюм"));
+        assertEquals("калегіум", converter.convert("калегіюм"));
+    }
+
+    @Test
     public void testDoublesMZ() {
         assertEquals("вяселле", converter.convert("вясельле"));
     }

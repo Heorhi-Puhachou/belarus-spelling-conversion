@@ -11,7 +11,7 @@ import by.spelling.conversion.converter.tarask.constant.replace.EndReplace;
 import by.spelling.conversion.converter.tarask.constant.replace.StartReplace;
 import by.spelling.conversion.parser.ParsedElement;
 import by.spelling.conversion.parser.Parser;
-import by.spelling.conversion.util.Pair;
+import by.spelling.conversion.util.ReplacePair;
 import by.spelling.conversion.util.WordCase;
 
 import java.util.ArrayList;
@@ -169,25 +169,25 @@ public class NarkamTaraskConverter extends BaseConverter {
     }
 
     private String dummyReplace(String in) {
-        for (Pair pair : DummyReplace.getDummyReplaces()) {
-            in = in.replace(pair.getIn(), pair.getOut());
+        for (ReplacePair pair : DummyReplace.getDummyReplaces()) {
+            in = in.replace(pair.getNarkam(), pair.getTarask());
         }
         return in;
     }
 
     private String replaceEnd(String word) {
-        for (Pair pair : EndReplace.getEndReplaces()) {
-            if (word.endsWith(pair.getIn())) {
-                return word.replace(pair.getIn(), pair.getOut());
+        for (ReplacePair pair : EndReplace.getEndReplaces()) {
+            if (word.endsWith(pair.getNarkam())) {
+                return word.replace(pair.getNarkam(), pair.getTarask());
             }
         }
         return word;
     }
 
     private String replaceStart(String word) {
-        for (Pair pair : StartReplace.getStartReplaces()) {
-            if (word.startsWith(pair.getIn())) {
-                return word.replace(pair.getIn(), pair.getOut());
+        for (ReplacePair pair : StartReplace.getStartReplaces()) {
+            if (word.startsWith(pair.getNarkam())) {
+                return word.replace(pair.getNarkam(), pair.getTarask());
             }
         }
         return word;
