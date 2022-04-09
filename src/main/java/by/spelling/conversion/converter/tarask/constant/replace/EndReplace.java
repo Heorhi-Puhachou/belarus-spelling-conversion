@@ -21,6 +21,9 @@ public class EndReplace {
 
         //кампендыум - кампендыюм
         endReplace.add(new ReplacePair("ыум", "ыюм"));
+
+        //эскадрылья - эскадрыльля
+        endReplace.add(new ReplacePair("лья", "льля"));
     }
 
     public static EndReplace getInstance() {
