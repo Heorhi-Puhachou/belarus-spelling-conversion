@@ -22,7 +22,14 @@ public class StartReplace {
         startReplace.add(new ReplacePair("амерык", "амэрык"));
 
         startReplace.add(new ReplacePair("інструмент", "інструмэнт"));
+        startReplace.add(new ReplacePair("сітуац", "сытуац"));
+        startReplace.add(new ReplacePair("імпер", "імпэр"));
         startReplace.add(new ReplacePair("шаблон", "шаблён"));
+        startReplace.add(new ReplacePair("лакал", "лякал"));
+        startReplace.add(new ReplacePair("лабарат", "лябарат"));
+        startReplace.add(new ReplacePair("канвенц", "канвэнц"));
+        startReplace.add(new ReplacePair("эфект", "эфэкт"));
+        startReplace.add(new ReplacePair("механі", "мэхані"));
     }
 
     public static StartReplace getInstance() {
