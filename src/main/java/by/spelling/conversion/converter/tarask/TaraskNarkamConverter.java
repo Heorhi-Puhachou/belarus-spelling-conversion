@@ -81,6 +81,9 @@ public class TaraskNarkamConverter extends BaseConverter {
         convertedValue = chekMZ(convertedValue);
         convertedValue = chekMZForDoubles(convertedValue);
         convertedValue = transformCase(current.getWordCase(), convertedValue);
+        if (!transformCase(current.getWordCase(), current.getWord()).equals(convertedValue)) {
+            System.out.println(transformCase(current.getWordCase(), current.getWord()) + " -> " + convertedValue);
+        }
         return convertedValue;
     }
 
@@ -96,9 +99,13 @@ public class TaraskNarkamConverter extends BaseConverter {
     }
 
     // зь -> з
+    // празь -> праз
     private String checkZ(String current, ParsedElement next) {
         if (current.equals("зь")) {
             return "з";
+        }
+        if (current.equals("празь")) {
+            return "праз";
         }
         return current;
     }

@@ -80,6 +80,9 @@ public class NarkamTaraskConverter extends BaseConverter {
         convertedValue = chekMZForDoubles(convertedValue);
         convertedValue = chekDZ(convertedValue);
         convertedValue = transformCase(current.getWordCase(), convertedValue);
+        if (!transformCase(current.getWordCase(), current.getWord()).equals(convertedValue)) {
+            System.out.println(transformCase(current.getWordCase(), current.getWord()) + " -> " + convertedValue);
+        }
         return convertedValue;
     }
 
@@ -95,21 +98,38 @@ public class NarkamTaraskConverter extends BaseConverter {
     }
 
     // з -> зь
+    // праз -> празь
     private String checkZ(String current, ParsedElement next) {
         if (next != null
                 && next.getDelimiter().equals(" ")
                 && current.equals("з")) {
             for (int i = 0; i < MiakkajaPara.getMiakkijaPary().size(); i++) {
-                if (next.getWord().startsWith(MiakkajaPara.getMiakkijaPary().get(i)) ) {
+                if (next.getWord().startsWith(MiakkajaPara.getMiakkijaPary().get(i))) {
                     return "зь";
                 }
             }
             for (int i = 0; i < Zmiakchatel.getZmiakcaceli().size(); i++) {
-                if (next.getWord().startsWith(Zmiakchatel.getZmiakcaceli().get(i)) ) {
+                if (next.getWord().startsWith(Zmiakchatel.getZmiakcaceli().get(i))) {
                     return "зь";
                 }
             }
         }
+
+        if (next != null
+                && next.getDelimiter().equals(" ")
+                && current.equals("праз")) {
+            for (int i = 0; i < MiakkajaPara.getMiakkijaPary().size(); i++) {
+                if (next.getWord().startsWith(MiakkajaPara.getMiakkijaPary().get(i))) {
+                    return "празь";
+                }
+            }
+            for (int i = 0; i < Zmiakchatel.getZmiakcaceli().size(); i++) {
+                if (next.getWord().startsWith(Zmiakchatel.getZmiakcaceli().get(i))) {
+                    return "празь";
+                }
+            }
+        }
+
         return current;
     }
 
@@ -160,9 +180,9 @@ public class NarkamTaraskConverter extends BaseConverter {
     }
 
     private String chekDZ(String in) {
-        for (int j=0; j<Zmiakchatel.getZmiakcaceli().size(); j++){
-            String narkam = "ддз"+Zmiakchatel.getZmiakcaceli().get(j);
-            String tarask = "дзьдз"+Zmiakchatel.getZmiakcaceli().get(j);
+        for (int j = 0; j < Zmiakchatel.getZmiakcaceli().size(); j++) {
+            String narkam = "ддз" + Zmiakchatel.getZmiakcaceli().get(j);
+            String tarask = "дзьдз" + Zmiakchatel.getZmiakcaceli().get(j);
             in = in.replace(narkam, tarask);
         }
         return in;

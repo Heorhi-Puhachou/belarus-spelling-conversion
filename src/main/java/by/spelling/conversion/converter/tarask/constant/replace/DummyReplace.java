@@ -25,6 +25,7 @@ public class DummyReplace {
         dummyReplace.add(new ReplacePair("в’етнам", "віетнам"));
         dummyReplace.add(new ReplacePair("гаус", "гаўс"));
         dummyReplace.add(new ReplacePair("Генры", "Гэнры"));
+        dummyReplace.add(new ReplacePair("глам", "глям"));
         dummyReplace.add(new ReplacePair("гласар", "глясар"));
         dummyReplace.add(new ReplacePair("дакумент", "дакумэнт"));
         dummyReplace.add(new ReplacePair("донья", "доньня"));
@@ -32,7 +33,7 @@ public class DummyReplace {
         dummyReplace.add(new ReplacePair("іерогліф", "герогліф"));
         dummyReplace.add(new ReplacePair("каментарый", "камэнтар"));
         dummyReplace.add(new ReplacePair("каталог", "каталёг"));
-        dummyReplace.add(new ReplacePair("клас", "кляс"));
+        dummyReplace.add(new ReplacePair("класіч", "клясыч"));
         dummyReplace.add(new ReplacePair("клуб", "клюб"));
         dummyReplace.add(new ReplacePair("лагіч", "лягіч"));
         dummyReplace.add(new ReplacePair("лампада", "лямпада"));
@@ -45,14 +46,18 @@ public class DummyReplace {
         dummyReplace.add(new ReplacePair("музей", "музэй"));
         dummyReplace.add(new ReplacePair("мушкіцёр", "мушкітэр"));
         dummyReplace.add(new ReplacePair("пазіцы", "пазыцы"));
+        dummyReplace.add(new ReplacePair("плутон", "плютон"));
+        dummyReplace.add(new ReplacePair("прэзент", "прэзэнт"));
         dummyReplace.add(new ReplacePair("рыдыус", "радыюс"));
         dummyReplace.add(new ReplacePair("рэклам", "рэклям"));
         dummyReplace.add(new ReplacePair("саліцёр", "слітэр"));
+        dummyReplace.add(new ReplacePair("сегм", "сэгм"));
         dummyReplace.add(new ReplacePair("сігнал", "сыгнал"));
         dummyReplace.add(new ReplacePair("сістэм", "сыстэм"));
         dummyReplace.add(new ReplacePair("фунікулёр", "фунікулер"));
         dummyReplace.add(new ReplacePair("фальклор", "фальклёр"));
         dummyReplace.add(new ReplacePair("шоу", "шоў"));
+        dummyReplace.add(new ReplacePair("эфект", "эфэкт"));
     }
 
     public static DummyReplace getInstance() {

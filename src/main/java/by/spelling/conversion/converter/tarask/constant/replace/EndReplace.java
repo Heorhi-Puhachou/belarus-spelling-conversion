@@ -16,6 +16,10 @@ public class EndReplace {
         endReplace.add(new ReplacePair("метр", "метар"));
         endReplace.add(new ReplacePair("літр", "літар"));
 
+        //элемент -> элемэнт
+        //дакумент -> дакумэнт
+        endReplace.add(new ReplacePair("мент", "мэнт"));
+
         //калегіум - калегіюм
         endReplace.add(new ReplacePair("іум", "іюм"));
 

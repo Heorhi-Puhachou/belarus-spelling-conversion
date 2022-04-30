@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NarkamTaraskConverterTest {
 
-    private static final  NarkamTaraskConverter converter = new NarkamTaraskConverter();
+    private static final NarkamTaraskConverter converter = new NarkamTaraskConverter();
 
     @Test
     public void testTransformEIntoJa() {
@@ -17,6 +17,7 @@ public class NarkamTaraskConverterTest {
     @Test
     public void testNoChange() {
         assertEquals("аплікацыя", converter.convert("аплікацыя"));
+        assertEquals("Пугачова", converter.convert("Пугачова"));
     }
 
     @Test
@@ -51,6 +52,12 @@ public class NarkamTaraskConverterTest {
     @Test
     public void testE() {
         assertEquals("Эўропа", converter.convert("Еўропа"));
+    }
+
+    @Test
+    public void testZ() {
+        assertEquals("празь яе", converter.convert("праз яе"));
+        assertEquals("зь сямі", converter.convert("з сямі"));
     }
 
 }
