@@ -23,6 +23,7 @@ public class StartReplace {
 
         startReplace.add(new ReplacePair("аперац", "апэрац"));
         startReplace.add(new ReplacePair("інструмент", "інструмэнт"));
+        startReplace.add(new ReplacePair("сервер", "сэрвэр"));
         startReplace.add(new ReplacePair("сітуац", "сытуац"));
         startReplace.add(new ReplacePair("спец", "спэц"));
         startReplace.add(new ReplacePair("псіх", "псых"));
