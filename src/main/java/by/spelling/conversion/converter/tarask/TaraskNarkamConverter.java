@@ -101,7 +101,7 @@ public class TaraskNarkamConverter extends BaseConverter {
 
     //  зьезд -> з'езд
     private String checkApost(String current) {
-        if (current.length() > 2
+        if (current.length() > current.indexOf("зь") + 2
                 && current.contains("зь")
                 && Zmiakchatel.getZmiakcaceli().contains(current.substring(current.indexOf("зь") + 2, current.indexOf("зь") + 3))) {
             return current.replace("зь", "з'");
