@@ -21,6 +21,7 @@ public class StartReplace {
         startReplace.add(new ReplacePair("швецы", "швэцы"));
         startReplace.add(new ReplacePair("амерык", "амэрык"));
 
+        startReplace.add(new ReplacePair("аперац", "апэрац"));
         startReplace.add(new ReplacePair("інструмент", "інструмэнт"));
         startReplace.add(new ReplacePair("сітуац", "сытуац"));
         startReplace.add(new ReplacePair("спец", "спэц"));
