@@ -72,6 +72,7 @@ public class TaraskNarkamConverter extends BaseConverter {
     private String convertElement(ParsedElement prev, ParsedElement current, ParsedElement next) {
         String convertedValue = checkI(prev, current.getWord(), current.getDelimiter());
         convertedValue = chekDZ(convertedValue);
+        convertedValue = checkApost(convertedValue);
         convertedValue = checkZ(convertedValue, next);
         convertedValue = checkNe(convertedValue, next);
         convertedValue = checkBez(convertedValue, next);
@@ -94,6 +95,15 @@ public class TaraskNarkamConverter extends BaseConverter {
             if (isGalosny(lastPrevSymbol)) {
                 return "і";
             }
+        }
+        return current;
+    }
+
+    //  зьезд -> з'езд
+    private String checkApost(String current) {
+        if (current.contains("зь")
+                && Zmiakchatel.getZmiakcaceli().contains(current.substring(current.indexOf("зь")+2, current.indexOf("зь") + 3))) {
+            return current.replace("зь", "з'");
         }
         return current;
     }

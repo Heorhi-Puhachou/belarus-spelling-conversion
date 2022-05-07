@@ -60,4 +60,15 @@ public class NarkamTaraskConverterTest {
         assertEquals("зь сямі", converter.convert("з сямі"));
     }
 
+    @Test
+    public void testMkkZnk() {
+        assertEquals("зьеў", converter.convert("з'еў"));
+        assertEquals("зьезд", converter.convert("з'езд"));
+    }
+
+    @Test
+    public void testSS() {
+        assertEquals("сьмяесься", converter.convert("смяешся"));
+    }
+
 }

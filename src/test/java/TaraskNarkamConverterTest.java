@@ -43,4 +43,11 @@ public class TaraskNarkamConverterTest {
     public void testJa() {
         assertEquals("класічны", converter.convert("клясычны"));
     }
+
+    @Test
+    public void testMkkZnk() {
+        assertEquals("з'еў", converter.convert("зьеў"));
+        assertEquals("з'езд", converter.convert("зьезд"));
+    }
+
 }

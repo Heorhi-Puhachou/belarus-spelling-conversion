@@ -28,6 +28,9 @@ public class EndReplace {
 
         //эскадрылья - эскадрыльля
         endReplace.add(new ReplacePair("лья", "льля"));
+
+        //смяешся - сьмяесься
+        endReplace.add(new ReplacePair("шся", "сься"));
     }
 
     public static EndReplace getInstance() {
