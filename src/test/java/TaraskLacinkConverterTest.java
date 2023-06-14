@@ -10,7 +10,7 @@ public class TaraskLacinkConverterTest {
 
     @Test
     public void test() {
-        assertEquals("zjezd", converter.convert("з'езд"));
+        assertEquals("Lahienda Zeldy", converter.convert("Лягенда Зэльды"));
     }
 
 }

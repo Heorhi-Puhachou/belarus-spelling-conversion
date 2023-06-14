@@ -59,7 +59,7 @@ public class TaraskLacinkConverter extends BaseConverter {
         pairs.put("я", "ja");
 
         pairsMiakkija = new HashMap<>();
-        pairsMiakkija.put("l", "ĺ");
+        pairsMiakkija.put("ł", "l");
         pairsMiakkija.put("n", "ń");
         pairsMiakkija.put("c", "ć");
         pairsMiakkija.put("s", "ś");
@@ -107,7 +107,11 @@ public class TaraskLacinkConverter extends BaseConverter {
 
                 String symbol = pairs.get("" + chars[i]);
                 if (i > 0 && isMiakkiGalosny(chars[i]) && !isGalosny(chars[i - 1]) && !isApostraf(chars[i - 1])) {
-                    symbol = symbol.replace("j", "i");
+                    if (result.substring(result.length() - 1).equals("l")) {
+                        symbol = symbol.replace("j", "");
+                    } else {
+                        symbol = symbol.replace("j", "i");
+                    }
                 }
                 result = result + symbol;
             }
