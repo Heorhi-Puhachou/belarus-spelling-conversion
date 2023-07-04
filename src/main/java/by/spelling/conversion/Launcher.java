@@ -1,8 +1,8 @@
 package by.spelling.conversion;
 
-import by.spelling.conversion.converter.BaseConverter;
-import by.spelling.conversion.converter.lacink.NarkamLacinkConverter;
-import by.spelling.conversion.converter.tarask.NarkamTaraskConverter;
+import by.spelling.conversion.converter.BazavyKanvertar;
+import by.spelling.conversion.converter.l.ALKanvertar;
+import by.spelling.conversion.converter.k.AKKanvertar;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,12 +16,12 @@ public class Launcher {
     public static void main(String[] args) throws IOException {
         if (args.length != 4) {
             System.out.println("Няправільная колькасьць аргумэнтаў. Іх павінна быць 4:");
-            System.out.println("- правапіс у файле, які будзе канвэртавацца (nar, tar, lac)");
+            System.out.println("- правапіс у файле, які будзе канвэртавацца (a, k, l)");
             System.out.println("- шлях да txt-файла, які будзе канвэртавацца");
-            System.out.println("- правапіс новага файла (nar, tar, lac)");
+            System.out.println("- правапіс новага файла (a, k, l)");
             System.out.println("- шлях да  новага файла");
             System.out.println("\nПрыклад:");
-            System.out.println("java -jar converter.jar nar 1 lac 2\n");
+            System.out.println("java -jar converter.jar a 1 l 2\n");
         } else {
             String inputStyle = args[0];
             String inputPath = args[1];
@@ -41,7 +41,7 @@ public class Launcher {
         } else if (!validStyle(outputStyle)) {
             System.out.println("Няправільны стыль выходнага файла.");
         } else {
-            BaseConverter converter = getConverterByStyles(inputStyle, outputStyle);
+            BazavyKanvertar converter = getConverterByStyles(inputStyle, outputStyle);
             convertToFile(inputPath, outputPath, converter);
         }
     }
@@ -57,28 +57,27 @@ public class Launcher {
         myWriter.close();
     }
 
-    static void convertToFile(String inputPath, String outputPath, BaseConverter converter) throws IOException {
+    static void convertToFile(String inputPath, String outputPath, BazavyKanvertar converter) throws IOException {
         String input = readFile(inputPath, StandardCharsets.UTF_8);
         System.out.println(input);
-        String output = converter.convert(input);
+        String output = converter.kanvertavać(input);
         System.out.println(output);
         writeToFile(output, outputPath);
     }
 
     static boolean validStyle(String style) {
-        return style.equalsIgnoreCase("nar")
-                || style.equalsIgnoreCase("tar")
-                || style.equalsIgnoreCase("lac");
+        return style.equalsIgnoreCase("a")
+                || style.equalsIgnoreCase("k")
+                || style.equalsIgnoreCase("l");
     }
 
-    static BaseConverter getConverterByStyles(String inputStyle, String outputStyle) {
-        if (inputStyle.equalsIgnoreCase("nar") && outputStyle.equalsIgnoreCase("tar")) {
-            return new NarkamTaraskConverter();
-        } else if (inputStyle.equalsIgnoreCase("nar") && outputStyle.equalsIgnoreCase("lac")) {
-            return new NarkamLacinkConverter();
+    static BazavyKanvertar getConverterByStyles(String inputStyle, String outputStyle) {
+        if (inputStyle.equalsIgnoreCase("a") && outputStyle.equalsIgnoreCase("k")) {
+            return new AKKanvertar();
+        } else if (inputStyle.equalsIgnoreCase("a") && outputStyle.equalsIgnoreCase("l")) {
+            return new ALKanvertar();
         } else {
-            return new BaseConverter();
+            return new BazavyKanvertar();
         }
     }
 }
-

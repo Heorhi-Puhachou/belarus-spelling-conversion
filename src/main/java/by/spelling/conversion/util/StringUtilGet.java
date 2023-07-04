@@ -1,6 +1,6 @@
 package by.spelling.conversion.util;
 
-import static by.spelling.conversion.util.StringUtilCheck.isGalosny;
+import static by.spelling.conversion.util.StringUtilCheck.isHalosny;
 
 public class StringUtilGet {
 
@@ -9,7 +9,7 @@ public class StringUtilGet {
         String result = null;
 
         for (int i = 0; i < word.length(); i++) {
-            if (isGalosny("" + chars[i])) {
+            if (StringUtilCheck.isHalosny("" + chars[i])) {
                 return "" + chars[i];
             }
         }
@@ -21,7 +21,7 @@ public class StringUtilGet {
         int quantity = 0;
 
         for (int i = 0; i < word.length(); i++) {
-            if (isGalosny("" + chars[i])) {
+            if (StringUtilCheck.isHalosny("" + chars[i])) {
                 quantity++;
             }
         }

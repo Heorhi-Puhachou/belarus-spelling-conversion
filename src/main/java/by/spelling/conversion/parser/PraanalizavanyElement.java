@@ -3,14 +3,14 @@ package by.spelling.conversion.parser;
 
 import by.spelling.conversion.util.WordCase;
 
-public class ParsedElement {
+public class PraanalizavanyElement {
 
     private String delimiter;
     private String originalWord;
     private String word;
     private WordCase wordCase;
 
-    public ParsedElement(String delimiter, String originalWord) {
+    public PraanalizavanyElement(String delimiter, String originalWord) {
         this.delimiter = delimiter;
         this.originalWord = originalWord;
         this.word = originalWord.toLowerCase();

@@ -1,9 +1,9 @@
-package by.spelling.conversion.converter.lacink;
+package by.spelling.conversion.converter.l;
 
 
-import by.spelling.conversion.converter.BaseConverter;
-import by.spelling.conversion.parser.ParsedElement;
-import by.spelling.conversion.parser.Parser;
+import by.spelling.conversion.converter.BazavyKanvertar;
+import by.spelling.conversion.parser.PraanalizavanyElement;
+import by.spelling.conversion.parser.Analizatar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,16 +13,16 @@ import static by.spelling.conversion.util.StringUtilCheck.*;
 import static by.spelling.conversion.util.StringUtilGet.getLastSymbol;
 import static by.spelling.conversion.util.StringUtilTransform.transformCase;
 
-public class TaraskLacinkConverter extends BaseConverter {
+public class KLKanvertar extends BazavyKanvertar {
 
-    private final Parser parser;
+    private final Analizatar parser;
     private final HashMap<String, String> pairs;
-    private final HashMap<String, String> pairsMiakkija;
+    private final HashMap<String, String> paraMiakkaści;
     private final HashMap<String, String> pairsL;
 
-    public TaraskLacinkConverter() {
+    public KLKanvertar() {
 
-        this.parser = new Parser();
+        this.parser = new Analizatar();
         pairs = new HashMap<>();
         pairs.put("а", "a");
         pairs.put("б", "b");
@@ -57,12 +57,12 @@ public class TaraskLacinkConverter extends BaseConverter {
         pairs.put("ю", "ju");
         pairs.put("я", "ja");
 
-        pairsMiakkija = new HashMap<>();
-        pairsMiakkija.put("ł", "l");
-        pairsMiakkija.put("n", "ń");
-        pairsMiakkija.put("c", "ć");
-        pairsMiakkija.put("s", "ś");
-        pairsMiakkija.put("z", "ź");
+        paraMiakkaści = new HashMap<>();
+        paraMiakkaści.put("ł", "l");
+        paraMiakkaści.put("n", "ń");
+        paraMiakkaści.put("c", "ć");
+        paraMiakkaści.put("s", "ś");
+        paraMiakkaści.put("z", "ź");
 
         pairsL = new HashMap<>();
         pairsL.put("łia", "la");
@@ -71,14 +71,14 @@ public class TaraskLacinkConverter extends BaseConverter {
         pairsL.put("łiu", "lu");
     }
 
-    public String convert(String tarask) {
-        if (tarask == null || tarask.isEmpty()) {
-            return tarask;
+    public String kanvertavać(String tekst) {
+        if (tekst == null || tekst.isEmpty()) {
+            return tekst;
         }
-        ArrayList<ParsedElement> elements = parser.parse(tarask);
+        ArrayList<PraanalizavanyElement> elements = parser.parse(tekst);
         StringBuilder result = new StringBuilder();
 
-        for (ParsedElement current : elements) {
+        for (PraanalizavanyElement current : elements) {
             if (isEngWord(current.getOriginalWord())) {
                 result.append(current.getDelimiter()).append(current.getOriginalWord());
             } else {
@@ -89,7 +89,7 @@ public class TaraskLacinkConverter extends BaseConverter {
         return result.toString();
     }
 
-    private String convertElement(ParsedElement current) {
+    private String convertElement(PraanalizavanyElement current) {
         String convertedValue = advancedReplace(current.getWord());
         convertedValue = transformCase(current.getWordCase(), convertedValue);
         return convertedValue;
@@ -111,8 +111,8 @@ public class TaraskLacinkConverter extends BaseConverter {
                 }
 
                 String symbol = pairs.get("" + chars[i]);
-                if (i > 0 && isMiakkiGalosny(chars[i])
-                        && !isGalosny(chars[i - 1])
+                if (i > 0 && hetaMiakkiHalosny(chars[i])
+                        && !isHalosny(chars[i - 1])
                         && chars[i - 1] != 'ь'
                         && chars[i - 1] != 'ў'
                         && !isApostraf(chars[i - 1])) {
@@ -134,9 +134,9 @@ public class TaraskLacinkConverter extends BaseConverter {
 
     private String replaceLastToMiakki(String word) {
         if (word.length() == 1) {
-            return pairsMiakkija.get(word);
+            return paraMiakkaści.get(word);
         }
-        String replacement = pairsMiakkija.get(getLastSymbol(word)) == null ? getLastSymbol(word) : pairsMiakkija.get(getLastSymbol(word));
+        String replacement = paraMiakkaści.get(getLastSymbol(word)) == null ? getLastSymbol(word) : paraMiakkaści.get(getLastSymbol(word));
         return word.substring(0, word.length() - 1) + replacement;
     }
 }

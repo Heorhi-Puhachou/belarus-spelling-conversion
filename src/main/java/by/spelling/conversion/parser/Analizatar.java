@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import static by.spelling.conversion.util.StringUtilCheck.isWordSymbol;
 
-public class Parser {
+public class Analizatar {
 
-    public ArrayList<ParsedElement> parse(String text) {
-        ArrayList<ParsedElement> result = new ArrayList<>();
+    public ArrayList<PraanalizavanyElement> parse(String text) {
+        ArrayList<PraanalizavanyElement> result = new ArrayList<>();
         char[] chars = text.toCharArray();
         boolean currentDelimiter = true;
         String currentDelimiterValue = "";
@@ -21,7 +21,7 @@ public class Parser {
             if (currentDelimiter && isDelimiter) {
                 currentDelimiterValue = currentDelimiterValue + currentSymbol;
                 if (isLastSymbol) {
-                    result.add(new ParsedElement(currentDelimiterValue, ""));
+                    result.add(new PraanalizavanyElement(currentDelimiterValue, ""));
                 }
             }
             // Чыталі не-слова й пачалі чытаць слова
@@ -29,23 +29,23 @@ public class Parser {
                 currentDelimiter = false;
                 currentWordValue = "" + currentSymbol;
                 if (isLastSymbol) {
-                    result.add(new ParsedElement(currentDelimiterValue, currentWordValue));
+                    result.add(new PraanalizavanyElement(currentDelimiterValue, currentWordValue));
                 }
             }
             // Чыталі слова й працягваем чытаць слова
             else if (!isDelimiter) {
                 currentWordValue = currentWordValue + currentSymbol;
                 if (isLastSymbol) {
-                    result.add(new ParsedElement(currentDelimiterValue, currentWordValue));
+                    result.add(new PraanalizavanyElement(currentDelimiterValue, currentWordValue));
                 }
             }
             // Чыталі слова й пачалі чытаць не-слова
             else {
-                result.add(new ParsedElement(currentDelimiterValue, currentWordValue));
+                result.add(new PraanalizavanyElement(currentDelimiterValue, currentWordValue));
                 currentDelimiter = true;
                 currentDelimiterValue = "" + currentSymbol;
                 if (isLastSymbol) {
-                    result.add(new ParsedElement(currentDelimiterValue, ""));
+                    result.add(new PraanalizavanyElement(currentDelimiterValue, ""));
                 }
             }
         }

@@ -15,15 +15,15 @@ public class StringUtilCheck {
         return matcher.matches();
     }
 
-    public static boolean isGalosny(String symbol) {
+    public static boolean isHalosny(String symbol) {
         String nonDelimiterPattern = "[аяоёэеуюыі]";
         Pattern pattern = Pattern.compile(nonDelimiterPattern);
         Matcher matcher = pattern.matcher(symbol);
         return matcher.matches();
     }
 
-    public static boolean isGalosny(char symbol) {
-        return isGalosny("" + symbol);
+    public static boolean isHalosny(char symbol) {
+        return isHalosny("" + symbol);
     }
 
     public static boolean isEngWord(String word) {
@@ -56,15 +56,15 @@ public class StringUtilCheck {
         return isApostraf("" + symbol);
     }
 
-    public static boolean isMiakkiGalosny(String symbol) {
-        String miakkiGalosnyPattern = "[яёеюі]";
-        Pattern pattern = Pattern.compile(miakkiGalosnyPattern);
+    public static boolean hetaMiakkiHalosny(String symbol) {
+        String miakkiHalosnyPattern = "[яёеюі]";
+        Pattern pattern = Pattern.compile(miakkiHalosnyPattern);
         Matcher matcher = pattern.matcher(symbol);
         return matcher.matches();
     }
 
-    public static boolean isMiakkiGalosny(char symbol) {
-        return isMiakkiGalosny("" + symbol);
+    public static boolean hetaMiakkiHalosny(char symbol) {
+        return hetaMiakkiHalosny("" + symbol);
     }
 
     public static boolean isOneVowelInWord(String word) {

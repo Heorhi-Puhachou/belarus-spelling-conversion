@@ -1,6 +1,6 @@
-package by.spelling.conversion.converter.tarask.constant.replace;
+package by.spelling.conversion.converter.k.constant.replace;
 
-import by.spelling.conversion.util.ReplacePair;
+import by.spelling.conversion.util.ParaZamieny;
 
 import java.util.ArrayList;
 
@@ -8,29 +8,29 @@ public class EndReplace {
     private static EndReplace single_instance = null;
 
 
-    private ArrayList<ReplacePair> endReplace;
+    private ArrayList<ParaZamieny> endReplace;
 
 
     private EndReplace() {
         this.endReplace = new ArrayList<>();
-        endReplace.add(new ReplacePair("метр", "метар"));
-        endReplace.add(new ReplacePair("літр", "літар"));
+        endReplace.add(new ParaZamieny("метр", "метар"));
+        endReplace.add(new ParaZamieny("літр", "літар"));
 
         //элемент -> элемэнт
         //дакумент -> дакумэнт
-        endReplace.add(new ReplacePair("мент", "мэнт"));
+        endReplace.add(new ParaZamieny("мент", "мэнт"));
 
         //калегіум - калегіюм
-        endReplace.add(new ReplacePair("іум", "іюм"));
+        endReplace.add(new ParaZamieny("іум", "іюм"));
 
         //кампендыум - кампендыюм
-        endReplace.add(new ReplacePair("ыум", "ыюм"));
+        endReplace.add(new ParaZamieny("ыум", "ыюм"));
 
         //эскадрылья - эскадрыльля
-        endReplace.add(new ReplacePair("лья", "льля"));
+        endReplace.add(new ParaZamieny("лья", "льля"));
 
         //смяешся - сьмяесься
-        endReplace.add(new ReplacePair("шся", "сься"));
+        endReplace.add(new ParaZamieny("шся", "сься"));
     }
 
     public static EndReplace getInstance() {
@@ -40,7 +40,7 @@ public class EndReplace {
         return single_instance;
     }
 
-    public static ArrayList<ReplacePair> getEndReplaces() {
+    public static ArrayList<ParaZamieny> getEndReplaces() {
         return getInstance().endReplace;
     }
 }
