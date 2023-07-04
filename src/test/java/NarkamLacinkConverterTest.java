@@ -10,7 +10,7 @@ public class NarkamLacinkConverterTest {
 
     @Test
     public void test() {
-        assertEquals("nia toj zjezd", converter.convert("не той з'езд"));
+        assertEquals("nia toj źjezd da Iŭja", converter.convert("не той з'езд да Іўя"));
     }
 
 }

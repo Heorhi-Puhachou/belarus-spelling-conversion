@@ -2,7 +2,6 @@ package by.spelling.conversion.converter.lacink;
 
 
 import by.spelling.conversion.converter.BaseConverter;
-import by.spelling.conversion.converter.tarask.NarkamTaraskConverter;
 import by.spelling.conversion.parser.ParsedElement;
 import by.spelling.conversion.parser.Parser;
 
@@ -16,10 +15,10 @@ import static by.spelling.conversion.util.StringUtilTransform.transformCase;
 
 public class TaraskLacinkConverter extends BaseConverter {
 
-    private Parser parser;
-    private HashMap<String, String> pairs;
-    private HashMap<String, String> pairsMiakkija;
-    private HashMap<String, String> pairsL;
+    private final Parser parser;
+    private final HashMap<String, String> pairs;
+    private final HashMap<String, String> pairsMiakkija;
+    private final HashMap<String, String> pairsL;
 
     public TaraskLacinkConverter() {
 
@@ -37,7 +36,6 @@ public class TaraskLacinkConverter extends BaseConverter {
         pairs.put("і", "i");
         pairs.put("й", "j");
         pairs.put("к", "k");
-        pairs.put("Л", "Ł");
         pairs.put("л", "ł");
         pairs.put("м", "m");
         pairs.put("н", "n");
@@ -48,7 +46,6 @@ public class TaraskLacinkConverter extends BaseConverter {
         pairs.put("т", "t");
         pairs.put("у", "u");
         pairs.put("ў", "ŭ");
-        pairs.put("Ф", "F");
         pairs.put("ф", "f");
         pairs.put("х", "ch");
         pairs.put("ц", "c");
@@ -114,7 +111,11 @@ public class TaraskLacinkConverter extends BaseConverter {
                 }
 
                 String symbol = pairs.get("" + chars[i]);
-                if (i > 0 && isMiakkiGalosny(chars[i]) && !isGalosny(chars[i - 1]) && !isApostraf(chars[i - 1])) {
+                if (i > 0 && isMiakkiGalosny(chars[i])
+                        && !isGalosny(chars[i - 1])
+                        && chars[i - 1] != 'ь'
+                        && chars[i - 1] != 'ў'
+                        && !isApostraf(chars[i - 1])) {
                     symbol = symbol.replace("j", "i");
                 }
                 result = result + symbol;
