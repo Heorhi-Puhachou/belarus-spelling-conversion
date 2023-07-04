@@ -8,6 +8,7 @@ import by.spelling.conversion.parser.Parser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import static by.spelling.conversion.util.StringUtilCheck.*;
 import static by.spelling.conversion.util.StringUtilGet.getLastSymbol;
@@ -18,6 +19,7 @@ public class TaraskLacinkConverter extends BaseConverter {
     private Parser parser;
     private HashMap<String, String> pairs;
     private HashMap<String, String> pairsMiakkija;
+    private HashMap<String, String> pairsL;
 
     public TaraskLacinkConverter() {
 
@@ -30,13 +32,13 @@ public class TaraskLacinkConverter extends BaseConverter {
         pairs.put("д", "d");
         pairs.put("е", "je");
         pairs.put("ё", "jo");
-        pairs.put("ж", "z");
+        pairs.put("ж", "ž");
         pairs.put("з", "z");
         pairs.put("і", "i");
         pairs.put("й", "j");
         pairs.put("к", "k");
-        pairs.put("Л", "L");
-        pairs.put("л", "l");
+        pairs.put("Л", "Ł");
+        pairs.put("л", "ł");
         pairs.put("м", "m");
         pairs.put("н", "n");
         pairs.put("о", "o");
@@ -64,6 +66,12 @@ public class TaraskLacinkConverter extends BaseConverter {
         pairsMiakkija.put("c", "ć");
         pairsMiakkija.put("s", "ś");
         pairsMiakkija.put("z", "ź");
+
+        pairsL = new HashMap<>();
+        pairsL.put("łia", "la");
+        pairsL.put("łie", "le");
+        pairsL.put("łio", "lo");
+        pairsL.put("łiu", "lu");
     }
 
     public String convert(String tarask) {
@@ -107,17 +115,20 @@ public class TaraskLacinkConverter extends BaseConverter {
 
                 String symbol = pairs.get("" + chars[i]);
                 if (i > 0 && isMiakkiGalosny(chars[i]) && !isGalosny(chars[i - 1]) && !isApostraf(chars[i - 1])) {
-                    if (result.substring(result.length() - 1).equals("l")) {
-                        symbol = symbol.replace("j", "");
-                    } else {
-                        symbol = symbol.replace("j", "i");
-                    }
+                    symbol = symbol.replace("j", "i");
                 }
                 result = result + symbol;
             }
         }
 
-        return result;
+        return replaceL(result);
+    }
+
+    private String replaceL(String word) {
+        for (Map.Entry<String, String> entry : pairsL.entrySet()) {
+            word = word.replace(entry.getKey(), entry.getValue());
+        }
+        return word.replace("łi", "li");
     }
 
     private String replaceLastToMiakki(String word) {
