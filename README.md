@@ -1,8 +1,9 @@
 ## Канвэртар для правапісаў беларускай мовы
 
-a - aficyjny
-k - klasyčny
-l - łacinka
+#### ŁT - Łacinka Tradycyjnaja
+#### LA - Łacinka Aficyjnaja
+#### KK - Kirylica Klasyčnaja
+#### KA - Kirylica Aficyjnaja
 
 Дадзены праект можа выкарыстоўвацца або як залежнасьць у іншых праектах, або як самастойны jar-файл. Каб атрымаць гэты
 файл дастаткова выканаць каманды Maven

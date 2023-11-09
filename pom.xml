@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>by.spelling.conversion</groupId>
-    <artifactId>converter</artifactId>
-    <version>0.1.2</version>
+    <groupId>by.kanvertar.pravapisu</groupId>
+    <artifactId>pravapis</artifactId>
+    <version>0.0.1</version>
 
     <dependencies>
         <dependency>
@@ -28,10 +28,10 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>by.spelling.conversion.Launcher</mainClass>
+                            <mainClass>by.kanvertar.pravapisu.Zapusk</mainClass>
                         </manifest>
                         <manifestEntries>
-                            <Built-By>Heorhi Puhachou</Built-By>
+                            <Built-By>Małatok Biełaruski</Built-By>
                         </manifestEntries>
                     </archive>
                 </configuration>
